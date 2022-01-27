@@ -7,8 +7,8 @@ namespace Tennis {
         }
 
         public int AddScore() {
-            this.score += 1;
-            return this.score;
+            score += 1;
+            return score;
         }
     }
 }

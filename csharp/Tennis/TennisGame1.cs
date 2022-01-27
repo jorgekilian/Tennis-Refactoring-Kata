@@ -2,7 +2,6 @@ namespace Tennis
 {
     public class TennisGame1 : ITennisGame
     {
-        public int m_score1 = 0;
         private int m_score2 = 0;
         private string player1Name;
         private string player2Name;
@@ -18,7 +17,7 @@ namespace Tennis
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                m_score1 = player1.AddScore();
+                player1.AddScore();
             else
                 m_score2 += 1;
         }

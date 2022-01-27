@@ -16,9 +16,13 @@ namespace Tennis
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                m_score1 += 1;
+                AddScore();
             else
                 m_score2 += 1;
+        }
+
+        private int AddScore() {
+            return m_score1 += 1;
         }
 
         public string GetScore()

@@ -12,7 +12,7 @@ namespace Tennis
         {
             this.player1Name = player1Name;
             this.player2Name = player2Name;
-            player1 = new Player(this);
+            player1 = new Player();
         }
 
         public void WonPoint(string playerName)

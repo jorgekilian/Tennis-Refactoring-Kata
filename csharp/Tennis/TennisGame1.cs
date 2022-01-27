@@ -18,7 +18,7 @@ namespace Tennis
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                m_score1 += Player.AddScore();
+                m_score1 += player1.AddScore();
             else
                 m_score2 += 1;
         }

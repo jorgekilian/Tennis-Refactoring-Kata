@@ -27,9 +27,9 @@ namespace Tennis
         {
             string score = "";
             var tempScore = 0;
-            if (m_score1 == m_score2)
+            if (player1.Score == m_score2)
             {
-                switch (m_score1)
+                switch (player1.Score)
                 {
                     case 0:
                         score = "Love-All";
@@ -46,9 +46,9 @@ namespace Tennis
 
                 }
             }
-            else if (m_score1 >= 4 || m_score2 >= 4)
+            else if (player1.Score >= 4 || m_score2 >= 4)
             {
-                var minusResult = m_score1 - m_score2;
+                var minusResult = player1.Score - m_score2;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";
                 else if (minusResult >= 2) score = "Win for player1";
@@ -58,7 +58,7 @@ namespace Tennis
             {
                 for (var i = 1; i < 3; i++)
                 {
-                    if (i == 1) tempScore = m_score1;
+                    if (i == 1) tempScore = player1.Score;
                     else { score += "-"; tempScore = m_score2; }
                     switch (tempScore)
                     {

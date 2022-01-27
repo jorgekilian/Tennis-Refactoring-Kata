@@ -1,14 +1,14 @@
 namespace Tennis {
     public class Player {
-        private int score;
+        public int Score { get; private set; }
 
         public Player(int score) {
-            this.score = score;
+            this.Score = score;
         }
 
         public int AddScore() {
-            score += 1;
-            return score;
+            Score += 1;
+            return Score;
         }
     }
 }

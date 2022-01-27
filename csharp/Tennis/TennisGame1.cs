@@ -6,19 +6,19 @@ namespace Tennis
         private int m_score2 = 0;
         private string player1Name;
         private string player2Name;
-        private readonly Player player;
+        private readonly Player player1;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
             this.player2Name = player2Name;
-            player = new Player(this);
+            player1 = new Player(this);
         }
 
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                player.AddScore();
+                player1.AddScore();
             else
                 m_score2 += 1;
         }

@@ -2,27 +2,25 @@ namespace Tennis
 {
     public class TennisGame1 : ITennisGame
     {
-        private int m_score1 = 0;
+        public int m_score1 = 0;
         private int m_score2 = 0;
         private string player1Name;
         private string player2Name;
+        private readonly Player player;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
             this.player2Name = player2Name;
+            player = new Player(this);
         }
 
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                AddScore();
+                player.AddScore();
             else
                 m_score2 += 1;
-        }
-
-        private int AddScore() {
-            return m_score1 += 1;
         }
 
         public string GetScore()

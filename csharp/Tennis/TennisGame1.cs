@@ -6,12 +6,14 @@ namespace Tennis
         private string player1Name;
         private string player2Name;
         private readonly Player player1;
+        private readonly Player player2;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
             this.player2Name = player2Name;
             player1 = new Player(0);
+            player2 = new Player(0);
         }
 
         public void WonPoint(string playerName)
@@ -19,14 +21,14 @@ namespace Tennis
             if (playerName == "player1")
                 player1.AddScore();
             else
-                m_score2 += 1;
+                player2.AddScore();
         }
 
         public string GetScore()
         {
             string score = "";
             var tempScore = 0;
-            if (player1.Score == m_score2)
+            if (player1.Score == player2.Score)
             {
                 switch (player1.Score)
                 {
@@ -45,9 +47,9 @@ namespace Tennis
 
                 }
             }
-            else if (player1.Score >= 4 || m_score2 >= 4)
+            else if (player1.Score >= 4 || player2.Score >= 4)
             {
-                var minusResult = player1.Score - m_score2;
+                var minusResult = player1.Score - player2.Score;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";
                 else if (minusResult >= 2) score = "Win for player1";
@@ -58,7 +60,7 @@ namespace Tennis
                 for (var i = 1; i < 3; i++)
                 {
                     if (i == 1) tempScore = player1.Score;
-                    else { score += "-"; tempScore = m_score2; }
+                    else { score += "-"; tempScore = player2.Score; }
                     switch (tempScore)
                     {
                         case 0:

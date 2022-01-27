@@ -13,7 +13,7 @@ namespace Tennis
             this.player1Name = player1Name;
             this.player2Name = player2Name;
             player1 = new Player(0, player1Name);
-            player2 = new Player(0, player1Name);
+            player2 = new Player(0, player2Name);
         }
 
         public void WonPoint(string playerName)

@@ -3,7 +3,7 @@ namespace Tennis {
         public int Score { get; private set; }
 
         public Player(int score) {
-            this.Score = score;
+            Score = score;
         }
 
         public void AddScore() {

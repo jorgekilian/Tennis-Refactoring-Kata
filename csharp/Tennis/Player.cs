@@ -1,15 +1,15 @@
 namespace Tennis {
     public class Player {
-        private static int score;
-        private readonly int score1;
+        private static int score2;
+        private readonly int score;
 
-        public Player(int score1) {
-            score = 1;
-            this.score1 = score1;
+        public Player(int score) {
+            score2 = 1;
+            this.score = score;
         }
 
         public static int AddScore() {
-            return score;
+            return score2;
         }
     }
 }

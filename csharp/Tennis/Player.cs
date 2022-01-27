@@ -6,9 +6,8 @@ namespace Tennis {
             this.Score = score;
         }
 
-        public int AddScore() {
+        public void AddScore() {
             Score += 1;
-            return Score;
         }
     }
 }

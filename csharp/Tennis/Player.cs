@@ -12,7 +12,7 @@ namespace Tennis {
             return new Player(score, name);
         }
 
-        public void AddScore() {
+        public void AddPoint() {
             Score += 1;
         }
     }

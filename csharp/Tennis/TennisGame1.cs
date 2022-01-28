@@ -13,9 +13,9 @@ namespace Tennis {
 
         public void WonPoint(string playerName) {
             if (playerName == player1.Name)
-                player1.AddScore();
+                player1.AddPoint();
             else
-                player2.AddScore();
+                player2.AddPoint();
         }
 
         public string GetScore() {
@@ -24,7 +24,7 @@ namespace Tennis {
                 return player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
             }
 
-            if (player1.Score >= 4 || player2.Score >= 4) {
+            if (PlayersAreAfterFirstDeuce()) {
                 var minusResult = player1.Score - player2.Score;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";
@@ -53,6 +53,10 @@ namespace Tennis {
                 }
             }
             return score;
+        }
+
+        private bool PlayersAreAfterFirstDeuce() {
+            return player1.Score >= 4 || player2.Score >= 4;
         }
 
         private bool PlayersAreTied() {

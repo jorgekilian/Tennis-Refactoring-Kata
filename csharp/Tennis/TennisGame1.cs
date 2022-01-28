@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace Tennis {
     public class TennisGame1 : ITennisGame {
         private readonly Player player1;

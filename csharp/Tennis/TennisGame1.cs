@@ -32,6 +32,7 @@ namespace Tennis {
                 else if (minusResult == -1) score = "Advantage player2";
                 else if (minusResult >= 2) score = "Win for player1";
                 else score = "Win for player2";
+                return score;
             }
             else {
                 for (var i = 1; i < 3; i++) {

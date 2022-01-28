@@ -20,7 +20,6 @@ namespace Tennis {
 
         public string GetScore() {
             string score = "";
-            var tempScore = 0;
             if (PlayersAreTied()) {
                 score = player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
                 return score;
@@ -36,6 +35,7 @@ namespace Tennis {
             }
 
             for (var i = 1; i < 3; i++) {
+                var tempScore = 0;
                 if (i == 1) tempScore = player1.Score;
                 else { score += "-"; tempScore = player2.Score; }
                 switch (tempScore) {

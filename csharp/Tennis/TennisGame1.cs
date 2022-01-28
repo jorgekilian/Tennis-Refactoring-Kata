@@ -21,9 +21,9 @@ namespace Tennis {
         public string GetScore() {
             if (PlayersAreDeuce()) return "Deuce";
 
-            if (PlayersHasTheSamePoints()) return $"{player1.CurrentScore()}-All";
+            if (PlayersHasTheSamePoints()) return $"{player1.GetCurrentScore()}-All";
 
-            if (PlayersHasLessThanFortyPoints()) return $"{player1.CurrentScore()}-{player2.CurrentScore()}";
+            if (PlayersHasLessThanFortyPoints()) return $"{player1.GetCurrentScore()}-{player2.GetCurrentScore()}";
 
             if (AdvantagePlayer1()) return player1.GetAdvantageScore();
 

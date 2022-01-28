@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Tennis {
     public class Player {
         public int Points { get; private set; }
-        public string Name { get; private set; }
+        public string Name { get; }
 
         private readonly List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
 
@@ -24,7 +24,7 @@ namespace Tennis {
             return Points > 2;
         }
 
-        public string CurrentScore() {
+        public string GetCurrentScore() {
             return scores[Points];
         }
 

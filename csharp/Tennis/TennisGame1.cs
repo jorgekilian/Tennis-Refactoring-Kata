@@ -5,6 +5,7 @@ namespace Tennis {
         private readonly Player player1;
         private readonly Player player2;
         private List<string> drawScores = new List<string> { "Love-All", "Fifteen-All", "Thirty-All" };
+        private List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame1(string player1Name, string player2Name) {
             player1 = Player.CreatePlayer(0, player1Name);
@@ -33,25 +34,9 @@ namespace Tennis {
                 return score;
             }
 
-            for (var i = 1; i < 3; i++) {
-                var tempScore = 0;
-                if (i == 1) tempScore = player1.Points;
-                else { score += "-"; tempScore = player2.Points; }
-                switch (tempScore) {
-                    case 0:
-                        score += "Love";
-                        break;
-                    case 1:
-                        score += "Fifteen";
-                        break;
-                    case 2:
-                        score += "Thirty";
-                        break;
-                    case 3:
-                        score += "Forty";
-                        break;
-                }
-            }
+            score = scores[player1.Points];
+            score += "-";
+            score += scores[player2.Points];
             return score;
         }
 

@@ -5,7 +5,6 @@ namespace Tennis {
     public class TennisGame1 : ITennisGame {
         private readonly Player player1;
         private readonly Player player2;
-        private readonly List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame1(string player1Name, string player2Name) {
             player1 = Player.CreatePlayer(0, player1Name);
@@ -20,9 +19,9 @@ namespace Tennis {
         }
 
         public string GetScore() {
-            if (PlayersHasTheSamePoints()) return player1.HasFortyPointsOrMore() ? "Deuce" : $"{player1.PlayerScore(scores)}-All";
+            if (PlayersHasTheSamePoints()) return player1.HasFortyPointsOrMore() ? "Deuce" : $"{player1.PlayerScore()}-All";
 
-            if (PlayersHasLessThanFortyPoints()) return $"{scores[player1.Points]}-{scores[player2.Points]}";
+            if (PlayersHasLessThanFortyPoints()) return $"{player1.PlayerScore()}-{player2.PlayerScore()}";
 
             if (AdvantagePlayer1()) return "Advantage player1";
 

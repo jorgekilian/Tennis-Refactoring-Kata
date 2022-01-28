@@ -5,6 +5,8 @@ namespace Tennis {
         public int Points { get; private set; }
         public string Name { get; }
 
+        private readonly List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
+
         private Player(int points, string name) {
             Points = points;
             Name = name;
@@ -22,8 +24,8 @@ namespace Tennis {
             return Points > 2;
         }
 
-        public string PlayerScore(List<string> list) {
-            return list[Points];
+        public string PlayerScore() {
+            return scores[Points];
         }
     }
 }

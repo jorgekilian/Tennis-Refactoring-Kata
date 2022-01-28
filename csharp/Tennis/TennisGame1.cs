@@ -21,7 +21,7 @@ namespace Tennis {
 
         public string GetScore() {
             string score = "";
-            if (PlayersAreTied()) {
+            if (PlayerHasTheSamePoints()) {
                 return player1.Points > 2 ? "Deuce" : $"{scores[player1.Points]}-All";
             }
 
@@ -41,7 +41,7 @@ namespace Tennis {
             return player1.Points >= 4 || player2.Points >= 4;
         }
 
-        private bool PlayersAreTied() {
+        private bool PlayerHasTheSamePoints() {
             return player1.Points == player2.Points;
         }
     }

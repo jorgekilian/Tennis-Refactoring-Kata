@@ -24,12 +24,16 @@ namespace Tennis {
             return Points > 2;
         }
 
-        public string PlayerScore() {
+        public string CurrentScore() {
             return scores[Points];
         }
 
         public string GetAdvantageScore() {
             return $"Advantage {Name}";
+        }
+
+        public string GetWinnerScore() {
+            return $"Win for {Name}";
         }
     }
 }

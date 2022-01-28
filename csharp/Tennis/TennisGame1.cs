@@ -21,9 +21,9 @@ namespace Tennis {
         public string GetScore() {
             if (PlayersAreDeuce()) return "Deuce";
 
-            if (PlayersHasTheSamePoints()) return $"{player1.GetCurrentScore()}-All";
+            if (PlayersHasTheSamePoints()) return player1.GetDrawScore();
 
-            if (PlayersHasLessThanFortyPoints()) return $"{player1.GetCurrentScore()}-{player2.GetCurrentScore()}";
+            if (PlayersHasLessThanFortyPoints()) return GetGameScore();
 
             if (AdvantagePlayer1()) return player1.GetAdvantageScore();
 
@@ -33,6 +33,10 @@ namespace Tennis {
 
             return player2.GetWinnerScore();
 
+        }
+
+        private string GetGameScore() {
+            return $"{player1.GetCurrentScore()}-{player2.GetCurrentScore()}";
         }
 
         private bool PlayersAreDeuce() {

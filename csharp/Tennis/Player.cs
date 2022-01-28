@@ -35,5 +35,9 @@ namespace Tennis {
         public string GetWinnerScore() {
             return $"Win for {Name}";
         }
+
+        public string GetDrawScore() {
+            return $"{GetCurrentScore()}-All";
+        }
     }
 }

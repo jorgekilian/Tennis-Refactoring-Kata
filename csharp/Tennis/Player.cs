@@ -15,5 +15,9 @@ namespace Tennis {
         public void AddPoint() {
             Points += 1;
         }
+
+        public bool HasFortyPointsOrMore() {
+            return Points > 2;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Tennis {
         public string GetScore() {
             string score = "";
             if (PlayerHasTheSamePoints()) {
-                return player1.Points > 2 ? "Deuce" : $"{scores[player1.Points]}-All";
+                return player1.HasFortyPointsOrMore() ? "Deuce" : $"{scores[player1.Points]}-All";
             }
 
             if (SomePlayerHasFortyPointsOrMore()) {

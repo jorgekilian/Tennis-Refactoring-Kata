@@ -25,7 +25,7 @@ namespace Tennis {
                 return player1.HasFortyPointsOrMore() ? "Deuce" : $"{scores[player1.Points]}-All";
             }
 
-            if (SomePlayerHasFortyPointsOrMore()) {
+            if (SomePlayerHasMoreThanFortyPoints()) {
                 var minusResult = player1.Points - player2.Points;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";
@@ -37,7 +37,7 @@ namespace Tennis {
             return $"{scores[player1.Points]}-{scores[player2.Points]}";
         }
 
-        private bool SomePlayerHasFortyPointsOrMore() {
+        private bool SomePlayerHasMoreThanFortyPoints() {
             return player1.Points >= 4 || player2.Points >= 4;
         }
 

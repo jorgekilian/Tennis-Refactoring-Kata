@@ -26,10 +26,9 @@ namespace Tennis {
             }
 
             if (SomePlayerHasMoreThanFortyPoints()) {
-                var minusResult = player1.Points - player2.Points;
-                if (minusResult == 1) score = "Advantage player1";
-                else if (minusResult == -1) score = "Advantage player2";
-                else if (minusResult >= 2) score = "Win for player1";
+                if (player1.Points - player2.Points == 1) score = "Advantage player1";
+                else if (player1.Points - player2.Points == -1) score = "Advantage player2";
+                else if (player1.Points - player2.Points >= 2) score = "Win for player1";
                 else score = "Win for player2";
                 return score;
             }

@@ -26,14 +26,18 @@ namespace Tennis {
             }
 
             if (SomePlayerHasMoreThanFortyPoints()) {
-                if (player1.Points - player2.Points == 1) score = "Advantage player1";
-                else if (player1.Points - player2.Points == -1) score = "Advantage player2";
-                else if (player1.Points - player2.Points >= 2) score = "Win for player1";
+                if (PointDifferential() == 1) score = "Advantage player1";
+                else if (PointDifferential() == -1) score = "Advantage player2";
+                else if (PointDifferential() >= 2) score = "Win for player1";
                 else score = "Win for player2";
                 return score;
             }
 
             return $"{scores[player1.Points]}-{scores[player2.Points]}";
+        }
+
+        private int PointDifferential() {
+            return player1.Points - player2.Points;
         }
 
         private bool SomePlayerHasMoreThanFortyPoints() {

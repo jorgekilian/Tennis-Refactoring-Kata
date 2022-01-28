@@ -25,7 +25,8 @@ namespace Tennis {
                 score = player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
                 return score;
             }
-            else if (player1.Score >= 4 || player2.Score >= 4) {
+
+            if (player1.Score >= 4 || player2.Score >= 4) {
                 var minusResult = player1.Score - player2.Score;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";

@@ -34,24 +34,23 @@ namespace Tennis {
                 else score = "Win for player2";
                 return score;
             }
-            else {
-                for (var i = 1; i < 3; i++) {
-                    if (i == 1) tempScore = player1.Score;
-                    else { score += "-"; tempScore = player2.Score; }
-                    switch (tempScore) {
-                        case 0:
-                            score += "Love";
-                            break;
-                        case 1:
-                            score += "Fifteen";
-                            break;
-                        case 2:
-                            score += "Thirty";
-                            break;
-                        case 3:
-                            score += "Forty";
-                            break;
-                    }
+
+            for (var i = 1; i < 3; i++) {
+                if (i == 1) tempScore = player1.Score;
+                else { score += "-"; tempScore = player2.Score; }
+                switch (tempScore) {
+                    case 0:
+                        score += "Love";
+                        break;
+                    case 1:
+                        score += "Fifteen";
+                        break;
+                    case 2:
+                        score += "Thirty";
+                        break;
+                    case 3:
+                        score += "Forty";
+                        break;
                 }
             }
             return score;

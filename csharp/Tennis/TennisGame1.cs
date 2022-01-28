@@ -26,10 +26,10 @@ namespace Tennis {
             }
 
             if (SomePlayerHasMoreThanFortyPoints()) {
-                if (AdvantagePlayer1()) score = "Advantage player1";
-                else if (AdvantagePlayer2()) score = "Advantage player2";
-                else if (Player1HasWon()) score = "Win for player1";
-                else score = "Win for player2";
+                if (AdvantagePlayer1()) return "Advantage player1";
+                else if (AdvantagePlayer2()) return "Advantage player2";
+                else if (Player1HasWon()) return "Win for player1";
+                else return "Win for player2";
                 return score;
             }
 

@@ -1,10 +1,10 @@
 namespace Tennis {
     public class Player {
-        public int Score { get; private set; }
+        public int Points { get; private set; }
         public string Name { get; }
 
-        private Player(int score, string name) {
-            Score = score;
+        private Player(int points, string name) {
+            Points = points;
             Name = name;
         }
 
@@ -13,7 +13,7 @@ namespace Tennis {
         }
 
         public void AddPoint() {
-            Score += 1;
+            Points += 1;
         }
     }
 }

@@ -21,11 +21,11 @@ namespace Tennis {
         public string GetScore() {
             string score = "";
             if (PlayersAreTied()) {
-                return player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
+                return player1.Points > 2 ? "Deuce" : drawScores[player1.Points];
             }
 
             if (PlayersAreAfterFirstDeuce()) {
-                var minusResult = player1.Score - player2.Score;
+                var minusResult = player1.Points - player2.Points;
                 if (minusResult == 1) score = "Advantage player1";
                 else if (minusResult == -1) score = "Advantage player2";
                 else if (minusResult >= 2) score = "Win for player1";
@@ -35,8 +35,8 @@ namespace Tennis {
 
             for (var i = 1; i < 3; i++) {
                 var tempScore = 0;
-                if (i == 1) tempScore = player1.Score;
-                else { score += "-"; tempScore = player2.Score; }
+                if (i == 1) tempScore = player1.Points;
+                else { score += "-"; tempScore = player2.Points; }
                 switch (tempScore) {
                     case 0:
                         score += "Love";
@@ -56,11 +56,11 @@ namespace Tennis {
         }
 
         private bool PlayersAreAfterFirstDeuce() {
-            return player1.Score >= 4 || player2.Score >= 4;
+            return player1.Points >= 4 || player2.Points >= 4;
         }
 
         private bool PlayersAreTied() {
-            return player1.Score == player2.Score;
+            return player1.Points == player2.Points;
         }
     }
 }

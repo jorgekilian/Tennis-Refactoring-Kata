@@ -20,18 +20,18 @@ namespace Tennis {
         }
 
         public string GetScore() {
-            if (PlayersHasTheSamePoints()) {
-                return player1.HasFortyPointsOrMore() ? "Deuce" : $"{scores[player1.Points]}-All";
-            }
+            if (PlayersHasTheSamePoints()) return player1.HasFortyPointsOrMore() ? "Deuce" : $"{scores[player1.Points]}-All";
 
-            if (SomePlayerHasMoreThanFortyPoints()) {
-                if (AdvantagePlayer1()) return "Advantage player1";
-                if (AdvantagePlayer2()) return "Advantage player2";
-                if (Player1HasWon()) return "Win for player1";
-                return "Win for player2";
-            }
+            if (PlayersHasLessThanFortyPoints()) return $"{scores[player1.Points]}-{scores[player2.Points]}";
 
-            return $"{scores[player1.Points]}-{scores[player2.Points]}";
+            if (AdvantagePlayer1()) return "Advantage player1";
+
+            if (AdvantagePlayer2()) return "Advantage player2";
+
+            if (Player1HasWon()) return "Win for player1";
+
+            return "Win for player2";
+
         }
 
         private bool Player1HasWon() {
@@ -50,8 +50,8 @@ namespace Tennis {
             return player1.Points - player2.Points;
         }
 
-        private bool SomePlayerHasMoreThanFortyPoints() {
-            return player1.Points >= 4 || player2.Points >= 4;
+        private bool PlayersHasLessThanFortyPoints() {
+            return player1.Points < 4 && player2.Points < 4;
         }
 
         private bool PlayersHasTheSamePoints() {

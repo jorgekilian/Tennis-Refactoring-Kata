@@ -25,9 +25,9 @@ namespace Tennis {
 
             if (PlayersHasLessThanFortyPoints()) return $"{player1.PlayerScore()}-{player2.PlayerScore()}";
 
-            if (AdvantagePlayer1()) return player1.Advantage1();
+            if (AdvantagePlayer1()) return player1.GetAdvantageScore();
 
-            if (AdvantagePlayer2()) return "Advantage player2";
+            if (AdvantagePlayer2()) return player2.GetAdvantageScore();
 
             if (Player1HasWon()) return "Win for player1";
 

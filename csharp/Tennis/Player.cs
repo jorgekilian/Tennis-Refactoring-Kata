@@ -28,7 +28,7 @@ namespace Tennis {
             return scores[Points];
         }
 
-        public string Advantage1() {
+        public string GetAdvantageScore() {
             return $"Advantage {Name}";
         }
     }

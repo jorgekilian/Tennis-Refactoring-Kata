@@ -7,8 +7,8 @@ namespace Tennis
 
         public TennisGame1(string player1Name, string player2Name)
         {
-            player1 = new Player(0, player1Name);
-            player2 = new Player(0, player2Name);
+            player1 = Player.CreatePlayer(0, player1Name);
+            player2 = Player.CreatePlayer(0, player2Name);
         }
 
         public void WonPoint(string playerName)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Tennis {
@@ -34,10 +35,7 @@ namespace Tennis {
                 return score;
             }
 
-            score = scores[player1.Points];
-            score += "-";
-            score += scores[player2.Points];
-            return score;
+            return $"{scores[player1.Points]}-{scores[player2.Points]}";
         }
 
         private bool PlayersAreAfterFirstDeuce() {

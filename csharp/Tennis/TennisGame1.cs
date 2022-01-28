@@ -5,7 +5,6 @@ namespace Tennis {
     public class TennisGame1 : ITennisGame {
         private readonly Player player1;
         private readonly Player player2;
-        private List<string> drawScores = new List<string> { "Love-All", "Fifteen-All", "Thirty-All" };
         private List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame1(string player1Name, string player2Name) {
@@ -23,7 +22,7 @@ namespace Tennis {
         public string GetScore() {
             string score = "";
             if (PlayersAreTied()) {
-                return player1.Points > 2 ? "Deuce" : drawScores[player1.Points];
+                return player1.Points > 2 ? "Deuce" : $"{scores[player1.Points]}-All";
             }
 
             if (PlayersAreAfterFirstDeuce()) {

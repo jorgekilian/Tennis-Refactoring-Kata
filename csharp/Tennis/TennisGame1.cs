@@ -5,7 +5,7 @@ namespace Tennis {
     public class TennisGame1 : ITennisGame {
         private readonly Player player1;
         private readonly Player player2;
-        private List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
+        private readonly List<string> scores = new List<string> { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame1(string player1Name, string player2Name) {
             player1 = Player.CreatePlayer(0, player1Name);

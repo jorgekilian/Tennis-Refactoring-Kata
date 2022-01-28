@@ -21,8 +21,7 @@ namespace Tennis {
         public string GetScore() {
             string score = "";
             if (PlayersAreTied()) {
-                score = player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
-                return score;
+                return player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
             }
 
             if (player1.Score >= 4 || player2.Score >= 4) {

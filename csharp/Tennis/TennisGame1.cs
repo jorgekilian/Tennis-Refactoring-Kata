@@ -20,17 +20,15 @@ namespace Tennis {
         }
 
         public string GetScore() {
-            string score = "";
             if (PlayersHasTheSamePoints()) {
                 return player1.HasFortyPointsOrMore() ? "Deuce" : $"{scores[player1.Points]}-All";
             }
 
             if (SomePlayerHasMoreThanFortyPoints()) {
                 if (AdvantagePlayer1()) return "Advantage player1";
-                else if (AdvantagePlayer2()) return "Advantage player2";
-                else if (Player1HasWon()) return "Win for player1";
-                else return "Win for player2";
-                return score;
+                if (AdvantagePlayer2()) return "Advantage player2";
+                if (Player1HasWon()) return "Win for player1";
+                return "Win for player2";
             }
 
             return $"{scores[player1.Points]}-{scores[player2.Points]}";

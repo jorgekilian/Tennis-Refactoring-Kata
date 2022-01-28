@@ -4,7 +4,7 @@ namespace Tennis {
     public class TennisGame1 : ITennisGame {
         private readonly Player player1;
         private readonly Player player2;
-        private List<string> scores = new List<string> { "Love-All", "Fifteen-All", "Thirty-All" };
+        private List<string> drawScores = new List<string> { "Love-All", "Fifteen-All", "Thirty-All" };
 
         public TennisGame1(string player1Name, string player2Name) {
             player1 = Player.CreatePlayer(0, player1Name);
@@ -21,8 +21,8 @@ namespace Tennis {
         public string GetScore() {
             string score = "";
             var tempScore = 0;
-            if (player1.Score == player2.Score) {
-                score = player1.Score > 2 ? "Deuce" : scores[player1.Score];
+            if (PlayersAreTied()) {
+                score = player1.Score > 2 ? "Deuce" : drawScores[player1.Score];
             }
             else if (player1.Score >= 4 || player2.Score >= 4) {
                 var minusResult = player1.Score - player2.Score;
@@ -52,6 +52,10 @@ namespace Tennis {
                 }
             }
             return score;
+        }
+
+        private bool PlayersAreTied() {
+            return player1.Score == player2.Score;
         }
     }
 }

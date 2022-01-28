@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Tennis {
     public class Player {
         public int Points { get; private set; }
@@ -18,6 +20,10 @@ namespace Tennis {
 
         public bool HasFortyPointsOrMore() {
             return Points > 2;
+        }
+
+        public string PlayerScore(List<string> list) {
+            return list[Points];
         }
     }
 }

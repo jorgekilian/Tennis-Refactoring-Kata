@@ -20,7 +20,7 @@ namespace Tennis {
         }
 
         public string GetScore() {
-            if (PlayersHasTheSamePoints()) return player1.HasFortyPointsOrMore() ? "Deuce" : $"{PlayerScore(player1, scores)}-All";
+            if (PlayersHasTheSamePoints()) return player1.HasFortyPointsOrMore() ? "Deuce" : $"{player1.PlayerScore(scores)}-All";
 
             if (PlayersHasLessThanFortyPoints()) return $"{scores[player1.Points]}-{scores[player2.Points]}";
 
@@ -32,10 +32,6 @@ namespace Tennis {
 
             return "Win for player2";
 
-        }
-
-        private static string PlayerScore(Player player, List<string> list) {
-            return list[player.Points];
         }
 
         private bool Player1HasWon() {
